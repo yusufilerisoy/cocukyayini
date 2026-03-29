@@ -89,11 +89,11 @@ export default function Footer() {
             {/* Brand */}
             <div>
               <Image
-                src={img('/images/logo.png')}
+                src={img('/images/logo-transparent.png')}
                 alt="Çocuk Yayını"
                 width={180}
                 height={32}
-                className="h-10 w-auto mb-4 brightness-200"
+                className="h-10 w-auto mb-4 invert brightness-0 invert"
               />
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
                 Türkiye&apos;nin çocuk yayıncılığı ve edebiyatı platformu. Haberler,
