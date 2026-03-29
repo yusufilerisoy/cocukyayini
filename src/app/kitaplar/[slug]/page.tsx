@@ -74,9 +74,9 @@ export default function BookDetailPage({ params }: { params: { slug: string } })
               <h3 className="text-lg font-bold text-gray-900 mb-3">Kitap Hakkında</h3>
               <p className="text-gray-600 leading-relaxed mb-4">{book.description}</p>
               <p className="text-gray-500 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris.
+                Bu kitap, {book.ageGroup} yaş grubundaki okurlar için {book.publisher} tarafından
+                yayımlanmıştır. {book.author.name} tarafından kaleme alınan eser, çocuk edebiyatı
+                severler tarafından büyük ilgi görmektedir.
               </p>
 
               {/* Tags */}
