@@ -1,0 +1,69 @@
+{
+  "site": {
+    "name": "Children's Publishing",
+    "description": "Turkey's children's publishing and literature platform"
+  },
+  "nav": {
+    "home": "Home",
+    "news": "News",
+    "interviews": "Interviews",
+    "books": "Books & Publications",
+    "columns": "Columns",
+    "bookPlanet": "Book Planet",
+    "readingGame": "Reading Game",
+    "tasting": "Book Tasting",
+    "portraits": "Portraits",
+    "videoArchive": "Video Archive",
+    "events": "Events Calendar"
+  },
+  "common": {
+    "readMore": "Read More",
+    "seeAll": "See All",
+    "search": "Search",
+    "searchPlaceholder": "Search...",
+    "share": "Share",
+    "tags": "Tags",
+    "relatedArticles": "Related Articles",
+    "relatedBooks": "Related Books",
+    "source": "Source",
+    "date": "Date",
+    "author": "Author",
+    "category": "Category",
+    "page": "Page",
+    "loading": "Loading..."
+  },
+  "home": {
+    "featuredArticles": "Featured",
+    "latestNews": "Latest News",
+    "books": "Books",
+    "thisMonth": "This Month",
+    "events": "Events"
+  },
+  "book": {
+    "buyNow": "Buy Now",
+    "ageGroup": "Age Group",
+    "publisher": "Publisher",
+    "pages": "Pages",
+    "newReleases": "New Releases",
+    "bestSellers": "Best Sellers",
+    "essentials": "Essential Books"
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "subtitle": "Don't miss updates from the world of children's publishing!",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe"
+  },
+  "footer": {
+    "corporate": "Corporate",
+    "sections": "Sections",
+    "publications": "Publications",
+    "about": "About Us",
+    "contributors": "Contributors",
+    "contact": "Contact",
+    "press": "Press",
+    "sitemap": "Sitemap",
+    "archive": "Archive",
+    "copyright": "All rights reserved."
+  }
+}

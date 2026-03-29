@@ -1,0 +1,69 @@
+{
+  "site": {
+    "name": "Çocuk Yayını",
+    "description": "Türkiye'nin çocuk yayıncılığı ve edebiyatı platformu"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "news": "Haberler",
+    "interviews": "Söyleşiler",
+    "books": "Kitaplar & Yayınlar",
+    "columns": "Köşe Yazıları",
+    "bookPlanet": "Kitap Gezegeni",
+    "readingGame": "Okuma Oyunu",
+    "tasting": "Tadımlık",
+    "portraits": "Portreler",
+    "videoArchive": "Video Arşiv",
+    "events": "Etkinlik Takvimi"
+  },
+  "common": {
+    "readMore": "Devamını Oku",
+    "seeAll": "Tümünü Gör",
+    "search": "Ara",
+    "searchPlaceholder": "Ara...",
+    "share": "Paylaş",
+    "tags": "Etiketler",
+    "relatedArticles": "İlgili Yazılar",
+    "relatedBooks": "İlgili Kitaplar",
+    "source": "Kaynak",
+    "date": "Tarih",
+    "author": "Yazar",
+    "category": "Kategori",
+    "page": "Sayfa",
+    "loading": "Yükleniyor..."
+  },
+  "home": {
+    "featuredArticles": "Öne Çıkanlar",
+    "latestNews": "Son Haberler",
+    "books": "Kitaplar",
+    "thisMonth": "Bu Ay",
+    "events": "Etkinlikler"
+  },
+  "book": {
+    "buyNow": "Satın Al",
+    "ageGroup": "Yaş Grubu",
+    "publisher": "Yayınevi",
+    "pages": "Sayfa",
+    "newReleases": "Yeni Çıkanlar",
+    "bestSellers": "Çok Satanlar",
+    "essentials": "Başucu Kitapları"
+  },
+  "newsletter": {
+    "title": "E-Bülten",
+    "subtitle": "Çocuk yayıncılığı dünyasından haberleri kaçırmayın!",
+    "placeholder": "E-posta adresiniz",
+    "subscribe": "Kayıt Ol"
+  },
+  "footer": {
+    "corporate": "Kurumsal",
+    "sections": "Bölümler",
+    "publications": "Yayınlar",
+    "about": "Hakkımızda",
+    "contributors": "Katkı Verenler",
+    "contact": "İletişim",
+    "press": "Basında Biz",
+    "sitemap": "Site Haritası",
+    "archive": "Arşiv",
+    "copyright": "Tüm hakları saklıdır."
+  }
+}
