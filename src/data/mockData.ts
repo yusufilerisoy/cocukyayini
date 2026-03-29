@@ -1,73 +1,11 @@
-// External placeholder images for realistic preview
+// Placeholder images via picsum.photos (no CORS issues)
 const ph = {
-  // Authors - portrait photos
-  authors: [
-    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=400&h=400&fit=crop&crop=face',
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-  ],
-  // Articles - children, books, education
-  articles: [
-    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1491841573634-28140fc7eedc?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1526243741027-444d633d7365?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1474932430478-367dbb6832c1?w=800&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1519682577862-22b62b24e493?w=800&h=450&fit=crop',
-  ],
-  // Books - colorful book covers
-  books: [
-    'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1553729459-afe8f2e2882d?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1509266272358-7701da638078?w=300&h=450&fit=crop',
-    'https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=300&h=450&fit=crop',
-  ],
-  // Heroes - wide cinematic images
-  heroes: [
-    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1529473814998-077b4fec6770?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&h=500&fit=crop',
-    'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1200&h=500&fit=crop',
-  ],
-  // Events
-  events: [
-    'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=400&fit=crop',
-  ],
-  // Videos
-  videos: [
-    'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=640&h=360&fit=crop',
-    'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=640&h=360&fit=crop',
-    'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=640&h=360&fit=crop',
-    'https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=640&h=360&fit=crop',
-    'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=640&h=360&fit=crop',
-    'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=640&h=360&fit=crop',
-  ],
+  authors: Array.from({length: 8}, (_, i) => `https://picsum.photos/seed/author${i}/400/400`),
+  articles: Array.from({length: 12}, (_, i) => `https://picsum.photos/seed/article${i}/800/450`),
+  books: Array.from({length: 12}, (_, i) => `https://picsum.photos/seed/book${i}/300/450`),
+  heroes: Array.from({length: 6}, (_, i) => `https://picsum.photos/seed/hero${i}/1200/500`),
+  events: Array.from({length: 6}, (_, i) => `https://picsum.photos/seed/event${i}/800/400`),
+  videos: Array.from({length: 6}, (_, i) => `https://picsum.photos/seed/video${i}/640/360`),
 };
 
 // Mock data for cocukyayini.com
