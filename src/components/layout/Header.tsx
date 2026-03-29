@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { img } from '@/lib/utils';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaRss } from 'react-icons/fa';
 import { HiHome } from 'react-icons/hi';
 import { MdLanguage } from 'react-icons/md';
@@ -74,7 +75,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo.png"
+            src={img('/images/logo.png')}
             alt="Çocuk Yayını"
             width={280}
             height={48}

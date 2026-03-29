@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { img } from '@/lib/utils';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
 
@@ -88,7 +89,7 @@ export default function Footer() {
             {/* Brand */}
             <div>
               <Image
-                src="/images/logo.png"
+                src={img('/images/logo.png')}
                 alt="Çocuk Yayını"
                 width={180}
                 height={32}
