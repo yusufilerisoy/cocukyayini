@@ -30,8 +30,8 @@ export default function Header() {
     <header className="bg-white border-b border-gray-100">
       {/* Top bar */}
       <div className="bg-gray-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 flex items-center justify-between py-1.5 text-xs text-gray-500">
-          <nav className="flex items-center gap-4">
+        <div className="container mx-auto px-4 flex items-center justify-end sm:justify-between py-1.5 text-xs text-gray-500">
+          <nav className="hidden sm:flex items-center gap-4">
             {topLinks.map((link) => (
               <Link
                 key={link.href}
@@ -72,7 +72,7 @@ export default function Header() {
       </div>
 
       {/* Logo + Banner area */}
-      <div className="container mx-auto px-4 pt-5 pb-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 pt-4 pb-0 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src={img('/images/logo.png')}
