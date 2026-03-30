@@ -148,7 +148,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <div className="flex lg:hidden items-center justify-between w-full py-2">
-            <span className="text-white font-bold text-sm">MENU</span>
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="text-white font-bold text-sm">MENU</button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-2 text-white"
