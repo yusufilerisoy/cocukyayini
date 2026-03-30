@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { books } from '@/data/mockData';
+import { getBooksByCategory } from '@/lib/contentful';
 
-export default function BasucuPage() {
-  const filtered = books.filter(b => b.category === 'basucu');
+export default async function BasucuPage() {
+  const filtered = await getBooksByCategory('basucu');
 
   return (
     <div className="container mx-auto px-4">

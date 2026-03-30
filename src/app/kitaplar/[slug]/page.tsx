@@ -2,14 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import Sidebar from '@/components/shared/Sidebar';
-import { books } from '@/data/mockData';
+import { getBooks, getBookBySlug } from '@/lib/contentful';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const books = await getBooks();
   return books.map((book) => ({ slug: book.slug }));
 }
 
-export default function BookDetailPage({ params }: { params: { slug: string } }) {
-  const book = books.find((b) => b.slug === params.slug) || books[0];
+export default async function BookDetailPage({ params }: { params: { slug: string } }) {
+  const books = await getBooks();
+  const book = (await getBookBySlug(params.slug)) || books[0];
 
   return (
     <div className="container mx-auto px-4">

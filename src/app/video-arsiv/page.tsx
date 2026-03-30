@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { videos } from '@/data/mockData';
+import { getVideos } from '@/lib/contentful';
 import { HiPlay } from 'react-icons/hi';
 
-export default function VideoArsivPage() {
+export default async function VideoArsivPage() {
+  const videos = await getVideos();
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Video Arşiv' }]} />

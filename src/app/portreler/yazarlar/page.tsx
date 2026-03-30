@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { persons } from '@/data/mockData';
+import { getPersonsByRole } from '@/lib/contentful';
 
-const yazarlar = persons.filter((p) => p.role.includes('yazar'));
-
-export default function YazarlarPage() {
+export default async function YazarlarPage() {
+  const yazarlar = await getPersonsByRole('yazar');
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Portreler', href: '/portreler' }, { label: 'Yazarlar' }]} />

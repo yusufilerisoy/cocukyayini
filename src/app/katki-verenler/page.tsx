@@ -1,22 +1,23 @@
 import Image from 'next/image';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { persons } from '@/data/mockData';
+import { getPersons } from '@/lib/contentful';
 
-const editors = [
-  { name: 'Fatih Erdoğan', role: 'Köşe Yazarı - En-Gerekli Köşe', photo: persons[0].photo },
-  { name: 'Mustafa Ruhi Şirin', role: 'Genel Yayın Yönetmeni', photo: persons[7].photo },
-];
+export default async function KatkiVerenlerPage() {
+  const persons = await getPersons();
 
-const contributors = [
-  { name: 'Behiç Ak', role: 'Köşe Yazarı - Matraksiyon', photo: persons[1].photo },
-  { name: 'Mavisel Yener', role: 'Yazar / Söyleşi', photo: persons[2].photo },
-  { name: 'Aytül Akal', role: 'Pusula Bölümü', photo: persons[3].photo },
-  { name: 'Ayla Çınaroğlu', role: 'Yazar / Söyleşi', photo: persons[4].photo },
-  { name: 'Sevim Ak', role: 'Yazar / Söyleşi', photo: persons[5].photo },
-  { name: 'Gülten Dayıoğlu', role: 'Yazar / Söyleşi', photo: persons[6].photo },
-];
+  const editors = [
+    { name: 'Fatih Erdoğan', role: 'Köşe Yazarı - En-Gerekli Köşe', photo: persons[0]?.photo || '' },
+    { name: 'Mustafa Ruhi Şirin', role: 'Genel Yayın Yönetmeni', photo: persons[7]?.photo || '' },
+  ];
 
-export default function KatkiVerenlerPage() {
+  const contributors = [
+    { name: 'Behiç Ak', role: 'Köşe Yazarı - Matraksiyon', photo: persons[1]?.photo || '' },
+    { name: 'Mavisel Yener', role: 'Yazar / Söyleşi', photo: persons[2]?.photo || '' },
+    { name: 'Aytül Akal', role: 'Pusula Bölümü', photo: persons[3]?.photo || '' },
+    { name: 'Ayla Çınaroğlu', role: 'Yazar / Söyleşi', photo: persons[4]?.photo || '' },
+    { name: 'Sevim Ak', role: 'Yazar / Söyleşi', photo: persons[5]?.photo || '' },
+    { name: 'Gülten Dayıoğlu', role: 'Yazar / Söyleşi', photo: persons[6]?.photo || '' },
+  ];
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Katkı Verenler' }]} />

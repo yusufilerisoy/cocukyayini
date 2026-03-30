@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { events } from '@/data/mockData';
+import { getEvents } from '@/lib/contentful';
 import { HiCalendar, HiLocationMarker } from 'react-icons/hi';
 
 const eventTypeLabels: Record<string, string> = {
@@ -21,7 +21,8 @@ const eventTypeColors: Record<string, string> = {
   soylesi: 'bg-primary',
 };
 
-export default function EtkinliklerPage() {
+export default async function EtkinliklerPage() {
+  const events = await getEvents();
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Etkinlik Takvimi' }]} />

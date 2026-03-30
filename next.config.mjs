@@ -6,6 +6,7 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'picsum.photos' },
+      { protocol: 'https', hostname: 'images.ctfassets.net' },
     ],
   },
   trailingSlash: true,

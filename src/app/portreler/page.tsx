@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { persons } from '@/data/mockData';
+import { getPersons } from '@/lib/contentful';
 
-export default function PortrelerPage() {
+export default async function PortrelerPage() {
+  const persons = await getPersons();
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Portreler' }]} />

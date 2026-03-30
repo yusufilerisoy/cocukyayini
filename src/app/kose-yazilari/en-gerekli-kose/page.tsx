@@ -2,9 +2,10 @@ import Image from 'next/image';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import ArticleCard from '@/components/shared/ArticleCard';
 import Sidebar from '@/components/shared/Sidebar';
-import { articles, persons } from '@/data/mockData';
+import { getArticles, getPersons } from '@/lib/contentful';
 
-export default function EnGerekliKosePage() {
+export default async function EnGerekliKosePage() {
+  const [articles, persons] = await Promise.all([getArticles(), getPersons()]);
   const author = persons[0]; // Fatih Erdogan
   const authorArticles = articles.filter(
     (a) => a.articleType === 'kose-yazisi' && a.author.id === author.id

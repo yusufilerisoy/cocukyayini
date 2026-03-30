@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { books } from '@/data/mockData';
+import { getBooksByCategory } from '@/lib/contentful';
 
-export default function CokSatanlarPage() {
-  const filtered = books.filter(b => b.category === 'cok-satan');
+export default async function CokSatanlarPage() {
+  const filtered = await getBooksByCategory('cok-satan');
 
   return (
     <div className="container mx-auto px-4">

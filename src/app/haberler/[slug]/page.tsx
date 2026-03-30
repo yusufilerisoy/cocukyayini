@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import Sidebar from '@/components/shared/Sidebar';
-import { articles } from '@/data/mockData';
+import { getArticles, getArticleBySlug } from '@/lib/contentful';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const articles = await getArticles();
   return articles.map((article) => ({ slug: article.slug }));
 }
 
@@ -17,8 +18,9 @@ const categoryPaths: Record<string, string> = {
   'Matraksiyon': '/kose-yazilari/matraksiyon',
 };
 
-export default function ArticleDetailPage({ params }: { params: { slug: string } }) {
-  const article = articles.find((a) => a.slug === params.slug) || articles[0];
+export default async function ArticleDetailPage({ params }: { params: { slug: string } }) {
+  const articles = await getArticles();
+  const article = (await getArticleBySlug(params.slug)) || articles[0];
   const categoryHref = categoryPaths[article.category] || '/haberler';
 
   return (

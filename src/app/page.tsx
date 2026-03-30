@@ -4,14 +4,16 @@ import BookGrid from "@/components/home/BookGrid";
 import NewsGrid from "@/components/home/NewsGrid";
 import WeeklyHighlight from "@/components/home/WeeklyHighlight";
 import { VideoArchiveWidget, OkumaOyunuWidget } from "@/components/home/WidgetBoxes";
-import {
-  heroBanners,
-  articles,
-  books,
-  weeklyHighlights,
-} from "@/data/mockData";
+import { getHeroBanners, getArticles, getBooks, getWeeklyHighlights } from "@/lib/contentful";
 
-export default function Home() {
+export default async function Home() {
+  const [heroBanners, articles, books, weeklyHighlights] = await Promise.all([
+    getHeroBanners(),
+    getArticles(),
+    getBooks(),
+    getWeeklyHighlights(),
+  ]);
+
   const featuredArticle = articles.find((a) => a.isFeatured && a.articleType === "soylesi");
   const newsArticles = articles.filter((a) => a.articleType === "haber").slice(0, 4);
   const allArticles = articles.slice(0, 8);

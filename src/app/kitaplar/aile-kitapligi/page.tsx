@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { books } from '@/data/mockData';
+import { getBooks } from '@/lib/contentful';
 
 const readingTips = [
   {
@@ -36,7 +36,8 @@ const readingTips = [
   },
 ];
 
-export default function AileKitapligiPage() {
+export default async function AileKitapligiPage() {
+  const books = await getBooks();
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Kitaplar', href: '/kitaplar' }, { label: 'Aile Kitapl\u0131\u011f\u0131' }]} />

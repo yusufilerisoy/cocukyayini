@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import Sidebar from '@/components/shared/Sidebar';
-import { books } from '@/data/mockData';
+import { getBooks } from '@/lib/contentful';
 
-const tadimlikBooks = books.slice(0, 4);
-
-export default function TadimlikPage() {
+export default async function TadimlikPage() {
+  const books = await getBooks();
+  const tadimlikBooks = books.slice(0, 4);
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Tadımlık' }]} />

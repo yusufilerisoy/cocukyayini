@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { persons } from '@/data/mockData';
-
-const cizerler = persons.filter((p) => p.role.includes('cizer'));
+import { getPersonsByRole } from '@/lib/contentful';
 
 const ekstraCizerler = [
   { name: 'Feridun Oral', slug: '#', photo: 'https://picsum.photos/seed/cizer1/400/400', desc: 'Uluslararası ödüllü illüstratör. Bologna Çocuk Kitapları Fuarı\'nda Türkiye\'yi temsil etti.' },
@@ -11,7 +9,8 @@ const ekstraCizerler = [
   { name: 'Serap Deliorman', slug: '#', photo: 'https://picsum.photos/seed/cizer3/400/400', desc: 'Renkli ve neşeli illüstrasyonlarıyla çocuk kitaplarına hayat veriyor.' },
 ];
 
-export default function CizerlerPage() {
+export default async function CizerlerPage() {
+  const cizerler = await getPersonsByRole('cizer');
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Portreler', href: '/portreler' }, { label: 'Çizerler' }]} />

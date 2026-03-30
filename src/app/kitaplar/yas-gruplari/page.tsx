@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { books } from '@/data/mockData';
+import { getBooks } from '@/lib/contentful';
 
 const ageGroupSections = [
   { key: '1-3', label: '1-3 Ya\u015f' },
@@ -11,7 +11,8 @@ const ageGroupSections = [
   { key: '13+', label: '13+ Ya\u015f' },
 ];
 
-export default function YasGruplariPage() {
+export default async function YasGruplariPage() {
+  const books = await getBooks();
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Kitaplar', href: '/kitaplar' }, { label: 'Ya\u015f Gruplar\u0131' }]} />

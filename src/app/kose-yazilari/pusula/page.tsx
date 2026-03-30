@@ -2,7 +2,7 @@ import { HiBookOpen, HiClock, HiHeart } from 'react-icons/hi';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import ArticleCard from '@/components/shared/ArticleCard';
 import Sidebar from '@/components/shared/Sidebar';
-import { articles } from '@/data/mockData';
+import { getArticles } from '@/lib/contentful';
 
 const tips = [
   {
@@ -31,7 +31,8 @@ const tips = [
   },
 ];
 
-export default function PusulaPage() {
+export default async function PusulaPage() {
+  const articles = await getArticles();
   const pusulaArticles = articles.filter((a) => a.category === 'Pusula');
 
   return (

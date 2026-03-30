@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import Sidebar from '@/components/shared/Sidebar';
-import { persons, books } from '@/data/mockData';
+import { getPersons, getPersonBySlug, getBooks } from '@/lib/contentful';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const persons = await getPersons();
   return persons.map((p) => ({ slug: p.slug }));
 }
 
-export default function PersonDetailPage({ params }: { params: { slug: string } }) {
-  const person = persons.find((p) => p.slug === params.slug) || persons[0];
+export default async function PersonDetailPage({ params }: { params: { slug: string } }) {
+  const [persons, books] = await Promise.all([getPersons(), getBooks()]);
+  const person = (await getPersonBySlug(params.slug)) || persons[0];
   const personBooks = books.filter((b) => b.author.id === person.id);
 
   return (

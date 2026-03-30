@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/shared/Breadcrumb';
-import { articles, books } from '@/data/mockData';
+import { getArticles, getBooks } from '@/lib/contentful';
 import { HiCalendar, HiBookOpen, HiNewspaper } from 'react-icons/hi';
 
 const months = [
@@ -12,16 +12,17 @@ const months = [
   { label: 'Ekim 2025', articleCount: 11, bookCount: 9 },
 ];
 
-const categories = [
-  { label: 'Haberler', count: articles.filter(a => a.articleType === 'haber').length, href: '/haberler', icon: HiNewspaper },
-  { label: 'Söyleşiler', count: articles.filter(a => a.articleType === 'soylesi').length, href: '/soylesiler', icon: HiNewspaper },
-  { label: 'Köşe Yazıları', count: articles.filter(a => a.articleType === 'kose-yazisi').length, href: '/kose-yazilari', icon: HiNewspaper },
-  { label: 'Portreler', count: articles.filter(a => a.articleType === 'portre').length, href: '/portreler', icon: HiNewspaper },
-  { label: 'Dosya/Gündem', count: articles.filter(a => a.articleType === 'dosya').length, href: '/haberler/dosya-gundem', icon: HiNewspaper },
-  { label: 'Kitaplar', count: books.length, href: '/kitaplar', icon: HiBookOpen },
-];
+export default async function ArsivPage() {
+  const [articles, books] = await Promise.all([getArticles(), getBooks()]);
 
-export default function ArsivPage() {
+  const categories = [
+    { label: 'Haberler', count: articles.filter(a => a.articleType === 'haber').length, href: '/haberler', icon: HiNewspaper },
+    { label: 'Söyleşiler', count: articles.filter(a => a.articleType === 'soylesi').length, href: '/soylesiler', icon: HiNewspaper },
+    { label: 'Köşe Yazıları', count: articles.filter(a => a.articleType === 'kose-yazisi').length, href: '/kose-yazilari', icon: HiNewspaper },
+    { label: 'Portreler', count: articles.filter(a => a.articleType === 'portre').length, href: '/portreler', icon: HiNewspaper },
+    { label: 'Dosya/Gündem', count: articles.filter(a => a.articleType === 'dosya').length, href: '/haberler/dosya-gundem', icon: HiNewspaper },
+    { label: 'Kitaplar', count: books.length, href: '/kitaplar', icon: HiBookOpen },
+  ];
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb items={[{ label: 'Arşiv' }]} />

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { HiEmojiHappy } from 'react-icons/hi';
 import Breadcrumb from '@/components/shared/Breadcrumb';
 import Sidebar from '@/components/shared/Sidebar';
-import { articles, persons } from '@/data/mockData';
+import { getArticles, getPersons } from '@/lib/contentful';
 
 const okumaFali = [
   {
@@ -20,7 +20,8 @@ const okumaFali = [
   },
 ];
 
-export default function MatraksiyonPage() {
+export default async function MatraksiyonPage() {
+  const [articles, persons] = await Promise.all([getArticles(), getPersons()]);
   const author = persons[1]; // Behic Ak
   const matraksiyonArticles = articles.filter(
     (a) => a.articleType === 'kose-yazisi' && a.author.id === author.id
