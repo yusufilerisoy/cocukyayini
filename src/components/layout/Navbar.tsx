@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { HiChevronDown, HiMenu, HiX, HiSearch } from 'react-icons/hi';
 
@@ -67,9 +68,20 @@ const navItems: NavItem[] = [
 ];
 
 export default function Navbar() {
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (q: string) => {
+    if (q.trim()) {
+      router.push(`/arama?q=${encodeURIComponent(q.trim())}`);
+      setSearchOpen(false);
+      setMobileOpen(false);
+      setSearchQuery('');
+    }
+  };
 
   return (
     <nav className="bg-primary sticky top-0 z-50 shadow-md">
@@ -111,16 +123,18 @@ export default function Navbar() {
           {/* Search */}
           <div className="hidden lg:flex items-center">
             {searchOpen ? (
-              <div className="flex items-center bg-white/20 rounded-full px-3 py-1.5">
+              <form onSubmit={(e) => { e.preventDefault(); handleSearch(searchQuery); }} className="flex items-center bg-white/20 rounded-full px-3 py-1.5">
                 <input
                   type="text"
                   placeholder="Ara..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="bg-transparent text-white placeholder-white/70 text-sm outline-none w-40"
                   autoFocus
-                  onBlur={() => setSearchOpen(false)}
+                  onBlur={() => setTimeout(() => setSearchOpen(false), 200)}
                 />
-                <HiSearch className="w-4 h-4 text-white/70" />
-              </div>
+                <button type="submit"><HiSearch className="w-4 h-4 text-white/70" /></button>
+              </form>
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
@@ -150,16 +164,18 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t-2 border-primary shadow-xl max-h-[80vh] overflow-y-auto">
           {/* Mobile Search */}
-          <div className="p-4 border-b border-gray-100">
+          <form onSubmit={(e) => { e.preventDefault(); handleSearch(searchQuery); }} className="p-4 border-b border-gray-100">
             <div className="flex items-center bg-gray-100 rounded-full px-4 py-2">
               <HiSearch className="w-5 h-5 text-gray-400 mr-2" />
               <input
                 type="text"
                 placeholder="Ara..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="bg-transparent text-sm outline-none flex-1"
               />
             </div>
-          </div>
+          </form>
           {navItems.map((item) => (
             <div key={item.href} className="border-b border-gray-50">
               <div className="flex items-center justify-between">
