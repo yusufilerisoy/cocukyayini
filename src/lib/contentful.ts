@@ -153,7 +153,7 @@ function transformPerson(entry: any): Person {
     id: entry?.sys?.id ?? '',
     name: str(f.name),
     slug: str(f.slug),
-    photo: assetUrl(f.photo) || str(f.photoUrl),
+    photo: assetUrl(f.photo) || str(f.photoUrl) || `https://picsum.photos/seed/${str(f.slug) || 'default'}/400/400`,
     bio: typeof f.bio === 'object' ? richTextToString(f.bio) : str(f.bio),
     role: strArr(f.role),
   };
