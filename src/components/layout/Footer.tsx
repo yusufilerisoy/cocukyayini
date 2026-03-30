@@ -18,7 +18,7 @@ const corporateLinks = [
 
 const sectionLinks = [
   { label: 'Haberler', href: '/haberler' },
-  { label: 'Söyleşiler', href: '/soyleşiler' },
+  { label: 'Söyleşiler', href: '/soylesiler' },
   { label: 'Köşe Yazıları', href: '/kose-yazilari' },
   { label: 'Okuma Oyunu', href: '/okuma-oyunu' },
   { label: 'Tadımlık', href: '/tadimlik' },

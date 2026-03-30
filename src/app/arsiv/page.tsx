@@ -14,7 +14,7 @@ const months = [
 
 const categories = [
   { label: 'Haberler', count: articles.filter(a => a.articleType === 'haber').length, href: '/haberler', icon: HiNewspaper },
-  { label: 'Söyleşiler', count: articles.filter(a => a.articleType === 'soylesi').length, href: '/soyleşiler', icon: HiNewspaper },
+  { label: 'Söyleşiler', count: articles.filter(a => a.articleType === 'soylesi').length, href: '/soylesiler', icon: HiNewspaper },
   { label: 'Köşe Yazıları', count: articles.filter(a => a.articleType === 'kose-yazisi').length, href: '/kose-yazilari', icon: HiNewspaper },
   { label: 'Portreler', count: articles.filter(a => a.articleType === 'portre').length, href: '/portreler', icon: HiNewspaper },
   { label: 'Dosya/Gündem', count: articles.filter(a => a.articleType === 'dosya').length, href: '/haberler/dosya-gundem', icon: HiNewspaper },

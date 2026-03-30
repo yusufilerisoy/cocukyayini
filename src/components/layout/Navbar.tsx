@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
       { label: 'Çizgiyle', href: '/haberler/cizgiyle' },
     ],
   },
-  { label: 'Söyleşiler', href: '/soyleşiler' },
+  { label: 'Söyleşiler', href: '/soylesiler' },
   {
     label: 'Kitaplar & Yayınlar',
     href: '/kitaplar',
@@ -166,7 +166,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className="block px-4 py-3 text-sm font-semibold text-gray-800 hover:text-primary flex-1"
-                  onClick={() => !item.children && setMobileOpen(false)}
+                  onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
                 </Link>

@@ -72,7 +72,7 @@ export default function Header() {
       </div>
 
       {/* Logo + Banner area */}
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 pt-5 pb-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src={img('/images/logo.png')}

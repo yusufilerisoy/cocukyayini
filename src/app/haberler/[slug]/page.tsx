@@ -7,15 +7,25 @@ export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
 }
 
+const categoryPaths: Record<string, string> = {
+  'Haberler': '/haberler',
+  'Söyleşiler': '/soylesiler',
+  'Köşe Yazıları': '/kose-yazilari',
+  'Portreler': '/portreler',
+  'Pusula': '/kose-yazilari/pusula',
+  'Dosya/Gündem': '/haberler/dosya-gundem',
+  'Matraksiyon': '/kose-yazilari/matraksiyon',
+};
+
 export default function ArticleDetailPage({ params }: { params: { slug: string } }) {
   const article = articles.find((a) => a.slug === params.slug) || articles[0];
+  const categoryHref = categoryPaths[article.category] || '/haberler';
 
   return (
     <div className="container mx-auto px-4">
       <Breadcrumb
         items={[
-          { label: 'Haberler', href: '/haberler' },
-          { label: article.category, href: '/haberler' },
+          { label: article.category, href: categoryHref },
           { label: article.title },
         ]}
       />

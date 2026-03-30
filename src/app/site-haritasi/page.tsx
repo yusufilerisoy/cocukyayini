@@ -10,7 +10,7 @@ const sections = [
     { label: 'Çizgiyle', href: '/haberler/cizgiyle' },
     { label: 'Etkinlik Takvimi', href: '/etkinlikler' },
   ]},
-  { title: 'Söyleşiler', links: [{ label: 'Söyleşiler', href: '/soyleşiler' }] },
+  { title: 'Söyleşiler', links: [{ label: 'Söyleşiler', href: '/soylesiler' }] },
   { title: 'Kitaplar & Yayınlar', links: [
     { label: 'Tüm Kitaplar', href: '/kitaplar' },
     { label: 'Yeni Çıkanlar', href: '/kitaplar/yeni-cikanlar' },

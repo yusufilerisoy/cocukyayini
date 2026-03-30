@@ -438,7 +438,7 @@ export const heroBanners: HeroBanner[] = [
   {
     id: 'h2', title: 'Fatih Erdoğan ile Özel Söyleşi',
     subtitle: 'Çocuk edebiyatının geleceği hakkında samimi bir sohbet',
-    image: ph.heroes[1], linkUrl: '/soyleşiler/fatih-erdogan-soylesi',
+    image: ph.heroes[1], linkUrl: '/soylesiler/fatih-erdogan-soylesi',
   },
   {
     id: 'h3', title: 'Ayın Kitabı: Pıtırcık Yeni Maceralar',
