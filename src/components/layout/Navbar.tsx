@@ -98,6 +98,12 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
+                  onClick={(e) => {
+                    if (item.children) {
+                      e.preventDefault();
+                      setOpenDropdown(openDropdown === item.label ? null : item.label);
+                    }
+                  }}
                   className="flex items-center gap-1 px-3 py-3 text-white text-sm font-semibold hover:bg-white/20 transition-colors whitespace-nowrap"
                 >
                   {item.label}
